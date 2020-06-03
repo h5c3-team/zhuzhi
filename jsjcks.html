@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+       
+    /* var a = b = 10;
+    (function(){
+        var a;
+        a = b =20
+        console.log(a)//20
+　　 })();
+    console.log(a)//10
+    console.log(b) */
+
+    //字符串的反转
+    /* var str = "123456";
+    str.split("").reverse().join(""); */
+
+
+    var n = "miao wei zhen hao chi";
+    n.indexOf("wei",6)//-1
+
+    //如何清空一个数组
+    var arr  = [1,2,3,4,6];
+    // arr=[];//方法1
+    arr.length = 0;//方法2
+
+
+
+
+    var a = 10;
+　　function test() {
+       var a;
+    　　a = 100;
+    　　alert(a);//100
+    　　alert(this.a);//window.a 10
+    　　//var a;
+    　　alert(a);//100
+　　}
+　　test();
+
+
+    var arr=new Array(5);//创建一个长度为5的空数组 [,,,,]
+　　arr[1]=1;//[,1,,,]
+　　arr[5]=2;//[,1,,,,2]
+　　console.log(arr.length);
+
+
+    //substring 不推荐使用的 开始位置，结束的位置（不包括结束位置） [start,stop)
+    // substr  slice
+    var s = "abcdefg";
+　　 alert(s.substring(1,2));
+
+
+    var bird = {
+        size: "small"
+    };
+    var mouse = {
+        name: "Mickey",
+        small: true
+    }
+    
+    mouse[bird["size"]]
+
+
+    var c = { greeting: "Hey!" };
+    var d;
+    d = c;
+    c.greeting = "Hello";
+    console.log(d.greeting);
+
+
+
+    var a = 3;//number
+    var b = new Number(3);//实例化得到的数据类型都是 object类型的 
+    var c = 3;//number
+    console.log(a == b);//true
+    console.log(a === b);//false
+    console.log(b === c);//false
+
+
+    function Person(firstName, lastName) {
+        //如果此函数是一个构造函数，this指向实例化对象
+        //如果不是一个构造函数，this执行函数的调用者
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    var lydia = new Person("Lydia", "Hallie");
+    var sarah = Person("Sarah", "Smith");//没有把Person当作构造函数  this指向的是window
+    console.log(lydia);
+    console.log(sarah);//undefined
+
+
+    function sum(a, b) {
+        return a + b;
+    }
+    sum(1, "2");
+
+
+
+    let number = 0;
+    console.log(number++);//后加1  //打印的是0   然后加1 number变成了1
+    console.log(++number);//先加1 再执行的   //本来number已经是1  又加了一个1 是2   然后打印2
+    console.log(number);//2
+
+
+
+    function checkAge(data) {
+        if (data === { age: 18 }) {
+            console.log("You are an adult!");
+        } else if (data == { age: 18 }) {
+            console.log("You are still an adult.");
+        } else {
+            console.log(`Hmm.. You don't have an age I guess`);
+        }
+    } 
+    checkAge({ age: 18 });
+
+    
+
+    function employee(name,code)
+    {
+        this.name="wangli";
+        this.code="A001"; 
+    }
+    var newemp = new employee("zhangming",'A002'); 
+    document.write("雇员姓名:"+ newemp.name+ " "); 
+    document.write("雇员代号:"+ newemp.code +" ");
+
+
+
+    var foo = "11"+2+"1";
+    console.log(foo);//"1121"
+    console.log(typeof(foo));//string
+
+    var foo = "11"+2-"1";
+    console.log(foo);//111
+    console.log(typeof(foo));//number
+
+
+
+    var a = 10;
+    a.pro = 10;
+    console.log(a.pro + a);//undefined+10  按照数组相加  NaN
+    
+    var s = "hello";
+    s.pro = 'world';
+    console.log(s.pro + s);//undefined + "hello"  "undefinedhello"
+
+
+
+    var length = 2;
+    function fn() {
+        console.log(this.length);
+    }
+    var obj = {
+        length: 5,
+        method: function(fn) {
+            fn();
+            arguments[0]();
+        }
+    };
+    obj.method(fn,1,2,3);
+
+    </script>
+  </body>
+</html>
